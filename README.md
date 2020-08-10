@@ -8,11 +8,11 @@ We hope you find this challenge interesting. In order to help define what we are
 
 ### Expectations
 
-The goal of this exercise is to develop a simple ETL process for pulling game stats from the NHL website and then shapping the results in a database.  There are a few prerequisites that match our environment here (_Mac OS, docker, make_), you should be able to follow the [Makefile] if your environment doesn't quite match. 
+The goal of this exercise is to develop a simple ETL process for pulling game stats from the NHL website and then shaping the results in a database.  There are a few prerequisites that match our environment here (_Mac OS, docker, make_), you should be able to follow the [Makefile] if your environment doesn't quite match. 
 
 We are looking for you to imagine this a real, running production job.  Assume this job will be run on some schedule continuously in prod. We're looking for:
 
-* **Mostly Working Code** -- given the run steps, the code should download data, format it, load it into the db and the final data marts be queryable.  But we really want you to focus on productionizing this code.  What things could you add, what data could be produced (and where) that would make this job run in a very friendly way.  Specifically "running code" means:
+* **Mostly Working Code** -- given the run steps, the code should download data, format it, load it into the db and the final data marts be queryable.  But we really want you to focus on productionizing this code.  What things could you add, what data could be produced (and where) that would make this job run in a very friendly way?  Specifically "running code" means:
   * `make step1`  -- runs docker images in the foreground for convenience
   * `make step2 points_leaders` -- loads and shapes data then queries the results.  This should just print out the top 10 points leaders.
 * **Data Quality** -- An important part of data engineering is providing trustable, high quality data.  Doing that starts with tested code and then moves to tested data in step 2.
@@ -22,7 +22,7 @@ We are looking for you to imagine this a real, running production job.  Assume t
 Now this isn't to say this is 100% production code, there's _a lot_ of bad practices here around password management, data persistance, etc. Feel free to fix things that annoy you but it's not required, we're specifically looking around where the code has comments asking for you to fill in the details.
 
 #### Prerequisites
-We use Mac OS for development so if you have one and do any kind of development on it, you're probably good. Linux users should be OK as well, this was tested on Ubuntu.  Windows users will need to establish a complete workflow. (Sorry)
+We use Mac OS for development so if you have one and do any kind of development on it, you're probably good.  Linux environments should work too, this was tested on an Ubuntu machine.  Windows users will need to establish a complete workflow. (Sorry)
 * Docker -- native for linux, [Desktop](https://www.docker.com/products/docker-desktop) for Mac and windows users
 * `docker-compose` -- comes with desktop. Linux users may need an extra install. 
 * a functioning `make` -- if you don't/can't use this, the make file is just wrapping the steps necessary to run the code and should be easy to disect to run manually

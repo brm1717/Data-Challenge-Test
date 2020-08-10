@@ -22,7 +22,7 @@ We are looking for you to imagine this a real, running production job.  Assume t
 Now this isn't to say this is 100% production code, there's _a lot_ of bad practices here around password management, data persistance, etc. Feel free to fix things that annoy you but it's not required, we're specifically looking around where the code has comments asking for you to fill in the details.
 
 #### Prerequisites
-We use Mac OS for development so if you have one and do any kind of development on it, you're probably good.  Linux environments will need to adjust usages of ``.  Windows users will need to establish a complete workflow. (Sorry)
+We use Mac OS for development so if you have one and do any kind of development on it, you're probably good. Linux users should be OK as well, this was tested on Ubuntu.  Windows users will need to establish a complete workflow. (Sorry)
 * Docker -- native for linux, [Desktop](https://www.docker.com/products/docker-desktop) for Mac and windows users
 * `docker-compose` -- comes with desktop. Linux users may need an extra install. 
 * a functioning `make` -- if you don't/can't use this, the make file is just wrapping the steps necessary to run the code and should be easy to disect to run manually
@@ -57,7 +57,7 @@ Things to think about:
 * If this runs over a long enough time, did the NHL change their API?
 * How should we organize this data for use?
 
-Feel free to add any `pytest` code you want to `tests/` to figure stuff out.  That's good to see! (_To be fair to you the whole solution was coded so that there were no gotchas and then code was removed. That process took so much time that unit tests were unfortunately left out)
+Feel free to add any `pytest` code you want to `tests/` to figure stuff out.  That's good to see! (_To be fair to you the whole solution was coded so that there were no gotchas and then code was removed. That process took so much time that unit tests were unfortunately left out_)
 
 When you are done, running `make step1` should successfully bring up a database (localhost:5432), a minio server ([http://localhost:9000]), run your job and you will see the resultant CSV files in [s3_data/data-bucket/].
 

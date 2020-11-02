@@ -106,6 +106,15 @@ As stated above, the steps we are looking to run, which simulate a running job, 
 
 If you add a step or otherwise need us to run something outside of those steps please document in the submission.   There will be a follow up call to discuss your submission so a detailed write up isn't necessary, but if you feel the need to explain anything else, please do.
 
+## Tips
+* You don't need to get the whole season, if you do you'll change the shape of the data stored so you'll need to update the ingest step to match. TGhere's two commented out dates that have data already, focus your testing/work on those dates and you'll be OK.
+* Pandas has a function called `json_normalize` which will flatten out nested json into dotted notation. You can then replace `.` with `_` and should be able to match the column naming convention.
+ex:
+```python
+df = pd.json_normalize(#dict here)
+df = df.rename(columns=lambda col: col.replace('.', '_'))
+```
+* Think about what happens when `make step2` is run twice, potential fixes for that can be in the `dbt` part of the code, doesn't have to be a purely pythonic fix.
 
 ## Extras
 **NHL API Spec**
